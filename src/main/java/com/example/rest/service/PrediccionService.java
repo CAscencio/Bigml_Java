@@ -11,4 +11,5 @@ public interface PrediccionService {
 
     public HttpResponse<String> listar() throws IOException, InterruptedException;
 
+    public HttpResponse<String> buscarPrediccionId(String idPrediccion) throws IOException, InterruptedException;
 }

@@ -25,7 +25,6 @@ public class PrediccionController {
     @GetMapping("/listar")
     public ResponseEntity<?> listar() throws IOException, InterruptedException {
         String response = prediccionService.listar().body();
-        System.out.println("RESPONSE : " + response);
         PredListResDTO predListResDTO = objectMapper.readValue(response, PredListResDTO.class);
         return ResponseEntity.ok(predListResDTO);
     }
@@ -35,6 +34,13 @@ public class PrediccionController {
         String response = prediccionService.predecir(prediccionBody).body();
         PredResDTO predResDTO = objectMapper.readValue(response, PredResDTO.class);
         return ResponseEntity.status(HttpStatus.CREATED).body(predResDTO);
+    }
+
+    @GetMapping("/listar-prediccion")
+    public ResponseEntity<?> buscarPrediccionId(@RequestParam String idPrediccion) throws IOException, InterruptedException {
+        String response = prediccionService.buscarPrediccionId(idPrediccion).body();
+        PredResDTO predListResDTO = objectMapper.readValue(response, PredResDTO.class);
+        return ResponseEntity.ok(predListResDTO);
     }
 
 }
