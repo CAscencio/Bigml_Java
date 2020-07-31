@@ -10,4 +10,5 @@ public interface PrediccionService {
     public HttpResponse<String> predecir(PrediccionBody prediccionBody) throws IOException, InterruptedException;
 
     public HttpResponse<String> listar() throws IOException, InterruptedException;
+
 }

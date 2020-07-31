@@ -43,7 +43,7 @@ public class PrediccionServiceImpl extends HttpClientConfig implements Prediccio
     public HttpResponse<String> listar() throws IOException, InterruptedException {
         HttpRequest request = HttpRequest.newBuilder()
                 .GET()
-                .uri(URI.create(URL + "/dataset?" + CREDENCIALES))
+                .uri(URI.create(URL + "/prediction?" + CREDENCIALES))
                 .setHeader("User-Agent", "Java 11 HttpClient Bot") // add request header
                 .build();
         HttpResponse<String> response = getHttpClient().send(request, HttpResponse.BodyHandlers.ofString());

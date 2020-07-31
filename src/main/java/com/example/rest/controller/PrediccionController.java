@@ -1,5 +1,6 @@
 package com.example.rest.controller;
 
+import com.example.rest.dto.PredListResDTO;
 import com.example.rest.dto.PredResDTO;
 import com.example.rest.model.PrediccionBody;
 import com.example.rest.service.PrediccionService;
@@ -21,6 +22,14 @@ public class PrediccionController {
     @Autowired
     private PrediccionService prediccionService;
 
+    @GetMapping("/listar")
+    public ResponseEntity<?> listar() throws IOException, InterruptedException {
+        String response = prediccionService.listar().body();
+        System.out.println("RESPONSE : " + response);
+        PredListResDTO predListResDTO = objectMapper.readValue(response, PredListResDTO.class);
+        return ResponseEntity.ok(predListResDTO);
+    }
+
     @PostMapping("/predecir")
     public ResponseEntity<?> predecir(@RequestBody PrediccionBody prediccionBody) throws IOException, InterruptedException {
         String response = prediccionService.predecir(prediccionBody).body();
@@ -28,9 +37,4 @@ public class PrediccionController {
         return ResponseEntity.status(HttpStatus.CREATED).body(predResDTO);
     }
 
-    @GetMapping("/listar")
-    public ResponseEntity<?> listar(@RequestBody Object datos) {
-
-        return ResponseEntity.ok(datos);
-    }
 }

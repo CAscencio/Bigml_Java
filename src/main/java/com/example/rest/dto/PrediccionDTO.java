@@ -8,7 +8,7 @@ public class PrediccionDTO {
     private String objective_field_name;
     private String output;
     private Double probability;
-    private Double resource;
+    private String resource;
     private String task;
 
     public String getCreator() {
@@ -67,11 +67,11 @@ public class PrediccionDTO {
         this.probability = probability;
     }
 
-    public Double getResource() {
+    public String getResource() {
         return resource;
     }
 
-    public void setResource(Double resource) {
+    public void setResource(String resource) {
         this.resource = resource;
     }
 
