@@ -10,6 +10,91 @@
         <link href="style/style.css" rel="stylesheet" type="text/css"/>
     </h:head>
     <h:body>
-       
+
+        <h1 class="ui-widget-header ui-corner-all" align="center">BigML</h1>
+
+        <h:panelGrid columns="3">
+
+            <p:fieldset legend="Presión sanguínea"  >
+                <h:form>
+                    <h:panelGrid columns="1" style="margin-bottom: 10px">
+                        <p:inputText id="txt1" value="#{sliderView.number1}" />
+                        <p:slider for="txt1" />
+                    </h:panelGrid>
+                </h:form>
+            </p:fieldset>
+
+            <br/>
+
+            <p:fieldset legend="Fecha de diagnóstico.day-of-month">
+                <h:form>
+                    <h:panelGrid columns="1" style="margin-bottom: 10px">
+                        <p:inputText id="txt1" value="#{sliderView.number1}" />
+                        <p:slider for="txt1" />
+                    </h:panelGrid>
+                </h:form>
+            </p:fieldset>
+
+            <br/>
+
+            <p:fieldset legend="Fecha de diagnóstico.month">
+                <h:form>
+                    <h:panelGrid columns="1" style="margin-bottom: 10px">
+                        <p:inputText id="txt1" value="#{sliderView.number1}" />
+                        <p:slider for="txt1" />
+                    </h:panelGrid>
+                </h:form>
+            </p:fieldset>
+
+
+            <p:fieldset legend="Insulina">
+                <h:form>
+                    <h:panelGrid columns="1" style="margin-bottom: 10px">
+                        <p:inputText id="txt4" value="#{sliderView.number1}" />
+                        <p:slider for="txt4" />
+                    </h:panelGrid>
+                </h:form>
+            </p:fieldset>
+
+            <br/>
+
+            <p:fieldset legend="Pliegue cutáneo">
+                <h:form>
+                    <h:panelGrid columns="1" style="margin-bottom: 10px">
+                        <p:inputText id="txt5" value="#{sliderView.number1}" />
+                        <p:slider for="txt5" />
+                    </h:panelGrid>
+                </h:form>
+            </p:fieldset>
+
+            <br/>
+
+            <p:fieldset legend="Embarazos">
+                <h:form>
+                    <h:panelGrid columns="1" style="margin-bottom: 10px">
+                        <p:inputText id="txt6" value="#{sliderView.number1}" />
+                        <p:slider for="txt6" />
+                    </h:panelGrid>
+                </h:form>
+            </p:fieldset>
+
+            <br/>
+
+            <p:fieldset legend="Fecha de diagnóstico.day-of-week">
+                <p:selectOneMenu id="console" value="#{selectOneMenuView.console}" style="width:150px"> 
+                    <!--            <f:selectItem itemLabel="Select One" itemValue="" />
+                                <f:selectItem itemLabel="Xbox One" itemValue="Xbox One" />
+                                <f:selectItem itemLabel="PS4" itemValue="PS4" />
+                                <f:selectItem itemLabel="Wii U" itemValue="Wii U" />-->
+                    <f:facet name="footer">
+                        <p:separator />
+                        <h:outputText value="3 consoles" style="font-weight:bold;"/>
+                    </f:facet> 
+                </p:selectOneMenu>
+            </p:fieldset>
+
+        </h:panelGrid>
+
+
     </h:body>
 </html>
