@@ -18,7 +18,7 @@ public class PrediccionServiceImpl extends HttpClientConfig implements Prediccio
     private ObjectMapper objectMapper;
 
     String URL = "https://bigml.io/andromeda/";
-    String CREDENCIALES = "?username=ciurlizzaascencio;api_key=cbb20783a3a5dd772857123041bc33f91709f4e0";
+    String CREDENCIALES = "?username=marcosalarcon;api_key=7081e0eeee307b313644781c3e6859290fe11479";
 
     @Override
     public HttpResponse<String> predecir(PrediccionBody prediccionBody) throws IOException, InterruptedException {
