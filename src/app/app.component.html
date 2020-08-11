@@ -1,0 +1,140 @@
+<div class="div-body">
+<h1 style="text-align: center;">Predicción de Diabetes</h1>
+<h4 style="text-align: center;">Árbol de decisiones</h4>
+  <br>
+  <br>
+  <div nz-row>
+    <div nz-col nzSpan="24">
+      <form
+        nz-form
+        [nzLayout]="'inline'"
+        [formGroup]="validateForm"
+        (ngSubmit)="predecir()"
+      >
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input
+            type="number"
+              formControlName="embarazos"
+              nz-input
+              placeholder="Embarazos"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input formControlName="glucosa" nz-input placeholder="Glucosa" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input
+              formControlName="presion_sanguinea"
+              nz-input
+              placeholder="Pre. Sanguinea"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input
+              formControlName="pliegue_cutaneo"
+              nz-input
+              placeholder="Plieg. Cutaneo"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input formControlName="insulina" nz-input placeholder="Insulina" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input
+              formControlName="indice_de_masa_corporal"
+              nz-input
+              placeholder="Masa Corporal"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input
+              formControlName="pedigri_diabetes"
+              nz-input
+              placeholder="P. Diabetes"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input formControlName="edad" nz-input placeholder="Edad" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input formControlName="f_de_diagnostico_month" nz-input placeholder="Mes" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input formControlName="f_diagnostico_day_of_month" nz-input placeholder="Día" />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control nzErrorTip="Please input your username!">
+            <input
+              formControlName="f_diagnostico_day_of_week"
+              nz-input
+              placeholder="Dia de la semana"
+            />
+          </nz-form-control>
+        </nz-form-item>
+        <nz-form-item>
+          <nz-form-control>
+            <button nz-button nzType="primary" [disabled]="!validateForm.valid">
+              Enviar
+            </button>
+          </nz-form-control>
+        </nz-form-item>
+      </form>
+    </div>
+  </div>
+
+  <nz-modal
+      [(nzVisible)]="isVisible"
+      nzTitle="Respuesta de la Predicción"
+      (nzOnCancel)="handleCancel()"
+      (nzOnOk)="handleOk()"
+      [nzOkLoading]="isOkLoading"
+    >
+      <p>Modal Content</p>
+    </nz-modal>
+  <!-- <div nz-row>
+    <div nz-col nzSpan="24">
+      <nz-table #basicTable [nzData]="listOfData">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let data of basicTable.data">
+            <td>{{ data.name }}</td>
+            <td>{{ data.age }}</td>
+            <td>{{ data.address }}</td>
+            <td>
+              <a>Action 一 {{ data.name }}</a>
+              <nz-divider nzType="vertical"></nz-divider>
+              <a>Delete</a>
+            </td>
+          </tr>
+        </tbody>
+      </nz-table>
+    </div>
+  </div> -->
+</div>
