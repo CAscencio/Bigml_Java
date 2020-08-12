@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { PrediccionService } from "./service/prediccion-service";
+import { NzMessageService } from 'ng-zorro-antd/message';
 import { Prediccion, PrediccionResponse } from './model/Prediccion.model';
 
 @Component({
@@ -11,8 +12,13 @@ import { Prediccion, PrediccionResponse } from './model/Prediccion.model';
 export class AppComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
+    private message: NzMessageService,
     private prediccionService: PrediccionService
   ) {}
+  
+  validateForm: FormGroup;
+  model: Prediccion;
+  respuestaPred: PrediccionResponse;
 
   ngOnInit(): void {
     this.validateForm = this.fb.group({
@@ -30,13 +36,6 @@ export class AppComponent implements OnInit {
     });
   }
 
-  validateForm: FormGroup;
-  isVisible = false;
-  isOkLoading = false;
-  value?: string;
-  model: Prediccion;
-  respuestaPred: PrediccionResponse;
-
   predecir() {
     if(this.validateForm.valid) {
       this.model = {
@@ -53,60 +52,13 @@ export class AppComponent implements OnInit {
         "f_diagnostico_day_of_week": this.validateForm.get('f_diagnostico_day_of_week').value
     };    
     
+    this.message.success('Prediccón Enviada correctamente');
+
       this.prediccionService.predecir(this.model).subscribe(data => {
         this.respuestaPred = data;
         console.log('RETURN :', this.respuestaPred);
+        this.validateForm.reset();
       });
     }
   }
-
-  listOfData: Person[] = [
-    {
-      key: "1",
-      name: "John Brown Ascencio",
-      age: 32,
-      address: "New York No. 1 Lake Park",
-    },
-    {
-      key: "2",
-      name: "Jim Green",
-      age: 42,
-      address: "London No. 1 Lake Park",
-    },
-    {
-      key: "3",
-      name: "Joe Black",
-      age: 32,
-      address: "Sidney No. 1 Lake Park",
-    },
-  ];
-
-  submitForm(): void {
-    console.log("Datos recividos :", this.validateForm.value.userName);
-  }
-
-  
-
-  showModal(): void {
-    this.isVisible = true;
-  }
-
-  handleOk(): void {
-    this.isOkLoading = true;
-    setTimeout(() => {
-      this.isVisible = false;
-      this.isOkLoading = false;
-    }, 3000);
-  }
-
-  handleCancel(): void {
-    this.isVisible = false;
-  }
-}
-
-interface Person {
-  key: string;
-  name: string;
-  age: number;
-  address: string;
 }

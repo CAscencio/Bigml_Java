@@ -12,9 +12,9 @@
         (ngSubmit)="predecir()"
       >
         <nz-form-item>
-          <nz-form-control nzErrorTip="Please input your username!">
+          <nz-form-control nzErrorTip="Ingrese Nro. de Embarazos!">
             <input
-            type="number"
+              type="number"
               formControlName="embarazos"
               nz-input
               placeholder="Embarazos"
@@ -22,13 +22,14 @@
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input formControlName="glucosa" nz-input placeholder="Glucosa" />
+          <nz-form-control nzErrorTip="Ingrese nivel de glucosa!">
+            <input type="number" formControlName="glucosa" nz-input placeholder="Glucosa" />
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
-          <nz-form-control nzErrorTip="Please input your username!">
+          <nz-form-control nzErrorTip="Ingrese Presión sanguinea!">
             <input
+              type="number"
               formControlName="presion_sanguinea"
               nz-input
               placeholder="Pre. Sanguinea"
@@ -36,8 +37,9 @@
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
-          <nz-form-control nzErrorTip="Please input your username!">
+          <nz-form-control nzErrorTip="Ingrese Pliegue Cutaneo!">
             <input
+              type="number"
               formControlName="pliegue_cutaneo"
               nz-input
               placeholder="Plieg. Cutaneo"
@@ -45,13 +47,14 @@
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input formControlName="insulina" nz-input placeholder="Insulina" />
+          <nz-form-control nzErrorTip="Ingrese nivel de Insulina!">
+            <input type="number" formControlName="insulina" nz-input placeholder="Insulina" />
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
-          <nz-form-control nzErrorTip="Please input your username!">
+          <nz-form-control nzErrorTip="Ingrese Indice de masa corporal!">
             <input
+              type="number"
               formControlName="indice_de_masa_corporal"
               nz-input
               placeholder="Masa Corporal"
@@ -59,8 +62,9 @@
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
-          <nz-form-control nzErrorTip="Please input your username!">
+          <nz-form-control nzErrorTip="Ingrese Pedigri Diabetes!">
             <input
+              type="number"
               formControlName="pedigri_diabetes"
               nz-input
               placeholder="P. Diabetes"
@@ -68,32 +72,50 @@
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input formControlName="edad" nz-input placeholder="Edad" />
+          <nz-form-control nzErrorTip="Ingrese su edad!">
+            <input type="number" formControlName="edad" nz-input placeholder="Edad" />
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input formControlName="f_de_diagnostico_month" nz-input placeholder="Mes" />
+          <nz-form-control nzErrorTip="ingrese mes!">
+            <nz-select formControlName="f_de_diagnostico_month" nzShowSearch nzAllowClear nzPlaceHolder="Seleccione Mes">
+              <nz-option nzLabel="Enero" nzValue="1"></nz-option>
+              <nz-option nzLabel="Febrero" nzValue="2"></nz-option>
+              <nz-option nzLabel="Marzo" nzValue="3"></nz-option>
+              <nz-option nzLabel="Abril" nzValue="4"></nz-option>
+              <nz-option nzLabel="Mayo" nzValue="5"></nz-option>
+              <nz-option nzLabel="Junio" nzValue="6"></nz-option>
+              <nz-option nzLabel="Julio" nzValue="7"></nz-option>
+              <nz-option nzLabel="Agosto" nzValue="8"></nz-option>
+              <nz-option nzLabel="Septiembre" nzValue="9"></nz-option>
+              <nz-option nzLabel="Octubre" nzValue="10"></nz-option>
+              <nz-option nzLabel="Noviembre" nzValue="11"></nz-option>
+              <nz-option nzLabel="Diciembre" nzValue="12"></nz-option>
+            </nz-select>
+            <!-- <input  nz-input placeholder="Mes" /> -->
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input formControlName="f_diagnostico_day_of_month" nz-input placeholder="Día" />
+          <nz-form-control nzErrorTip="Ingrese día!">
+            <nz-input-number formControlName="f_diagnostico_day_of_month" [nzMin]="1" [nzMax]="31" [nzStep]="1" nzPlaceHolder="Día" class="tam-comp"></nz-input-number>
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
-          <nz-form-control nzErrorTip="Please input your username!">
-            <input
-              formControlName="f_diagnostico_day_of_week"
-              nz-input
-              placeholder="Dia de la semana"
-            />
+          <nz-form-control nzErrorTip="Ingres dia de la semana!">
+            <nz-select formControlName="f_diagnostico_day_of_week" nzShowSearch nzAllowClear nzPlaceHolder="Dia de la semana">
+              <nz-option nzLabel="Lunes" nzValue="1"></nz-option>
+              <nz-option nzLabel="Martes" nzValue="2"></nz-option>
+              <nz-option nzLabel="Miercoles" nzValue="3"></nz-option>
+              <nz-option nzLabel="Juves" nzValue="4"></nz-option>
+              <nz-option nzLabel="Viernes" nzValue="5"></nz-option>
+              <nz-option nzLabel="Sabado" nzValue="6"></nz-option>
+              <nz-option nzLabel="Domingo" nzValue="7"></nz-option>
+            </nz-select>
           </nz-form-control>
         </nz-form-item>
         <nz-form-item>
           <nz-form-control>
-            <button nz-button nzType="primary" [disabled]="!validateForm.valid">
+            <button nz-button nzType="primary" [disabled]="!validateForm.valid" [nzSize]="large" class="tam-comp">
               Enviar
             </button>
           </nz-form-control>
@@ -101,40 +123,12 @@
       </form>
     </div>
   </div>
-
-  <nz-modal
-      [(nzVisible)]="isVisible"
-      nzTitle="Respuesta de la Predicción"
-      (nzOnCancel)="handleCancel()"
-      (nzOnOk)="handleOk()"
-      [nzOkLoading]="isOkLoading"
-    >
-      <p>Modal Content</p>
-    </nz-modal>
-  <!-- <div nz-row>
+  <div nz-row>
     <div nz-col nzSpan="24">
-      <nz-table #basicTable [nzData]="listOfData">
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>Address</th>
-            <th>Action</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let data of basicTable.data">
-            <td>{{ data.name }}</td>
-            <td>{{ data.age }}</td>
-            <td>{{ data.address }}</td>
-            <td>
-              <a>Action 一 {{ data.name }}</a>
-              <nz-divider nzType="vertical"></nz-divider>
-              <a>Delete</a>
-            </td>
-          </tr>
-        </tbody>
-      </nz-table>
+      <br>
+      <h3> Resultados :</h3>
+      <p>Diabetes : {{respuestaPred?.output}}</p>
+      <p>Probabilidad : {{respuestaPred?.probability}}</p>
     </div>
-  </div> -->
+  </div>
 </div>

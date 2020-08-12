@@ -1,3 +1,15 @@
 .div-body {
     padding: 20px;
 }
+
+nz-select {
+    width: 175px;
+}
+
+[nz-button] {
+    margin-bottom: 12px;
+}
+
+.tam-comp {
+    width: 174px;
+}

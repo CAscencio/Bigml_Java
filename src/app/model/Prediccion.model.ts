@@ -12,7 +12,7 @@ export class Prediccion {
     f_diagnostico_day_of_week: String;
 }
 
-export class PrediccionResponse {
+export interface PrediccionResponse {
     creator: String;
     dataset: String;
     model: String;
